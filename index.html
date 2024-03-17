@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Cricket Game </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Game</title>
+  </head>
+  <body>
+    <h1>Bat Ball Stump Game</h1>
+    <button
+      onclick="
+    console.log('you have chosen bat')
+    //random no.
 
-</head>
-<body>
-    <h1> Bat Ball Stump Game</h1>
-    <button> Bat </button>
-    <button> ball </button>
-    <button> stump </button>
+    let randomNumber = Math.random() * 3;
+    let computerChoice;
+    if(randomNumber > 0 && randomNumber <= 1){
+      computerChoice = 'Bat';
+      //console.log('computer choice is bat');
+    }
+    else if(randomNumber > 1 && randomNumber <= 2){
+      computerChoice = 'Ball';
+      //console.log('computer choice is ball');
+    }
+    else{
+      computerChoice = 'Stump';
+      //console.log('computer choice is stump');
+    }
 
+    console.log(`Computer choise is ${computerChoice}`);
+    let resultMsg;
+    if(computerChoice === 'Ball'){
+      resultMsg = 'user won';
+    }
+    else if(computerChoice === 'Bat'){
+      resultMsg = `It's a tie`;
+    }
+    else if(computerChoice === 'Stump'){
+      resultMsg = 'Computer has won';
+    }
+
+    alert(`You have chosen Bat. Computer choice is ${computerChoice}. And ${resultMsg}`);
+    "
+    >
+      Bat
+    </button>
+    <button>ball</button>
+    <button>stump</button>
 
     <script type="text/javascript" src="script.js"></script>
-</body>
+  </body>
 </html>
