@@ -1,3 +1,9 @@
+let score = {
+  win: 0,
+  lost: 0,
+  tie: 0,
+};
+
 function playGame(userChoice) {
   console.log(`You have chosen ${userChoice}`);
 
@@ -15,16 +21,23 @@ function playGame(userChoice) {
 
   let resultMsg;
   if (computerChoice === userChoice) {
-    resultMsg = `It's a tie`;
+    score.tie++;
+    resultMsg = `It's a tie`; 
   } else if (
     (computerChoice === 'Ball' && userChoice === 'Bat') ||
     (computerChoice === 'Bat' && userChoice === 'Stump') ||
     (computerChoice === 'Stump' && userChoice === 'Ball')
   ) {
+    score.win++;
     resultMsg = `User has won`;
   } else {
+    score.lost++;
     resultMsg = 'Computer has won';
   }
 
-  alert(`You have chosen ${userChoice}. Computer choice is ${computerChoice}. And ${resultMsg}`);
+  alert(`You have chosen ${userChoice}. Computer choice is ${computerChoice}.
+  ${resultMsg}
+  
+  Won: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}
+  `);
 }
